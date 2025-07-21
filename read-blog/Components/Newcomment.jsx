@@ -10,7 +10,7 @@ export default function Newcomment(props) {
     const postid = postInView.id;
 
     fetch(
-      `http://backend-production-acfb.up.railway.app:5000/posts/${postid}/comments`,
+      `http://backend-production-acfb.up.railway.app/posts/${postid}/comments`,
       {
         method: "POST",
         headers: {

@@ -34,7 +34,7 @@ export default function Posts(props) {
 
   function togglePublished(post) {
     fetch(
-      `http://backend-production-acfb.up.railway.app:5000/posts/${post.id}/toggle`,
+      `http://backend-production-acfb.up.railway.app/posts/${post.id}/toggle`,
       {
         method: "PUT",
         headers: {
@@ -61,16 +61,13 @@ export default function Posts(props) {
   }
 
   function deletePost(post) {
-    fetch(
-      `http://backend-production-acfb.up.railway.app:5000/posts/${post.id}/`,
-      {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      }
-    )
+    fetch(`http://backend-production-acfb.up.railway.app/posts/${post.id}/`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    })
       .then(async (res) => {
         const data = await res.json();
         if (!res.ok) {
