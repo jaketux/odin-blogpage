@@ -4,7 +4,7 @@
   "main": "app.js",
   "scripts": {
     "dev": "node app.js",
-    "build": "prisma generate",
+    "build": "npx prisma migrate dev && npx prisma generate",
     "start": "node app.js",
     "postinstall": "prisma generate",
     "db:generate": "prisma generate",
