@@ -75,7 +75,7 @@ function App() {
 
   useEffect(() => {
     loggedIn &&
-      fetch("http://backend-production-acfb.up.railway.app/posts", {
+      fetch("https://backend-production-acfb.up.railway.app/posts", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

@@ -18,7 +18,7 @@ export default function Comment(props) {
 
   function deleteComment(id) {
     fetch(
-      `http://backend-production-acfb.up.railway.app/posts/${props.postInViewId}/comments/${id}`,
+      `https://backend-production-acfb.up.railway.app/posts/${props.postInViewId}/comments/${id}`,
       {
         method: "DELETE",
         headers: {
@@ -42,7 +42,7 @@ export default function Comment(props) {
     console.log("This is the new comment body: " + newPostData);
 
     fetch(
-      `http://backend-production-acfb.up.railway.app/posts/${props.postInViewId}/comments/${id}`,
+      `https://backend-production-acfb.up.railway.app/posts/${props.postInViewId}/comments/${id}`,
       {
         method: "PUT",
         headers: {

@@ -22,8 +22,8 @@ export default function CreatePost(props) {
 
     fetch(
       editPost
-        ? `http://backend-production-acfb.up.railway.app/posts/${postToEdit.id}`
-        : `http://backend-production-acfb.up.railway.app/posts/`,
+        ? `https://backend-production-acfb.up.railway.app/posts/${postToEdit.id}`
+        : `https://backend-production-acfb.up.railway.app/posts/`,
       {
         method: editPost ? "PUT" : "POST",
         headers: {
