@@ -5,7 +5,7 @@ export default function Login(props) {
     const username = formData.get("username");
     const password = formData.get("password");
 
-    fetch("https://backend-production-acfb.up.railway.app/login", {
+    fetch("https://backend-production-acfb.up.railway.app/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
