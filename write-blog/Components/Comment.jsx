@@ -17,13 +17,16 @@ export default function Comment(props) {
   const token = localStorage.getItem("token");
 
   function deleteComment(id) {
-    fetch(`http://localhost:5000/posts/${props.postInViewId}/comments/${id}`, {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-    }).then(() => {
+    fetch(
+      `http://backend-production-acfb.up.railway.app:5000/posts/${props.postInViewId}/comments/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    ).then(() => {
       props.setRefreshcounter((prev) => prev + 1);
     });
   }
@@ -38,14 +41,17 @@ export default function Comment(props) {
 
     console.log("This is the new comment body: " + newPostData);
 
-    fetch(`http://localhost:5000/posts/${props.postInViewId}/comments/${id}`, {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ content: newPostData }),
-    })
+    fetch(
+      `http://backend-production-acfb.up.railway.app:5000/posts/${props.postInViewId}/comments/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ content: newPostData }),
+      }
+    )
       .then(async (res) => {
         const data = await res.json();
         if (!res.ok) {

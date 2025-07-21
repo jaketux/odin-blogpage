@@ -9,14 +9,17 @@ export default function Newcomment(props) {
 
     const postid = postInView.id;
 
-    fetch(`http://localhost:5000/posts/${postid}/comments`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ content: content }),
-    })
+    fetch(
+      `http://backend-production-acfb.up.railway.app:5000/posts/${postid}/comments`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ content: content }),
+      }
+    )
       .then(async (res) => {
         const data = await res.json();
         if (!res.ok) {
