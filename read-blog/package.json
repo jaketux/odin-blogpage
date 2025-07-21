@@ -1,5 +1,6 @@
 {
   "name": "read-blog",
+  "homepage": "https://jaketux.github.io/odin-blogpage/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,6 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "predeploy": "npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
